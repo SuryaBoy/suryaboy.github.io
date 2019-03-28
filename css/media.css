@@ -1,4 +1,15 @@
-	/* Remove margins from "page content" on small screens */
-	@media only screen and (max-width: 600px) {
-		#main {margin-left: 0}
+@media only screen and (max-width: 600px) {
+	/*slider section style starts*/
+	.carousel-item > img {
+		height:400px;
 	}
+	/*slider secitn syele ends*/
+}
+
+@media only screen and (min-width: 600px) {
+	/*navbar style starts*/
+	#nav-brnd {
+		display:none;
+	}
+	/*navbar style ends*/
+} 
