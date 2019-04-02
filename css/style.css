@@ -1,3 +1,13 @@
+
+/*general style starts*/
+
+.general-sec {
+	padding:50px 0;
+}
+
+/*general style ends*/
+
+
 /*slider section style starts*/
 .carousel-item > img {
 	height:600px;
