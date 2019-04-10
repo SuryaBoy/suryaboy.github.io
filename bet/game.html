@@ -5,6 +5,7 @@
 		<meta charset="UTF-8">
 		<link rel="stylesheet" href="game.css" />
 		<link rel="stylesheet" href="css/general.css" />
+		<link rel="stylesheet" href="css/media.css" />
 	</head>
 
 	<body>
@@ -80,6 +81,7 @@
 				<label>Bet Amount  (£)</label>
 				<!-- <input id="amount" /> -->
 				<select id="amount">
+					<option selected disabled value=''>Select Amount</option>
 					<option value=10>10</option>
 					<option value=20>20</option>
 					<option value=40>40</option>
@@ -88,6 +90,7 @@
 				</select>
 				<label>Bet on horse:</label>
 				<select id="bethorse">
+					<option selected disabled value=''>Select Horse</option>
 					<option value=0>White</option>
 					<option value=1>Blue</option>
 					<option value=2>Green</option>
@@ -121,11 +124,11 @@
 			<img src="images/tree.png" class="tree" />
 
 		 	<audio id="gallop">
-			  <source src="audio/gallop.wav" type="audio/wav">
+			  <source src="audio/gallop.mp3" type="audio/mpeg">
 				Your browser does not support the audio element.
 			</audio>
 		 	<audio id="crowd">
-			  <source src="audio/crowd.wav" type="audio/wav">
+			  <source src="audio/run.mp3" type="audio/mpeg">
 				Your browser does not support the audio element.
 			</audio>
 		</div>
@@ -153,6 +156,36 @@
 			  </div>
 			</div>
 
+		</div>
+ 
+		<div id="generalModal" class="general-modal modal">
+			<div class="modal-content">
+				<div class="modal-header">
+					<span class="close">&times;</span>
+					<p id="modal-head-text"></p>
+				</div>
+				<div class="modal-body">
+					<p id="modal-body-text"></p>
+				</div>
+				<div class="modal-footer">
+					<p id="modal-footer-text"></p>
+				</div>
+			</div>
+		</div>
+
+		<div id="askModal" class="ask-modal general-modal modal">
+			<div class="modal-content">
+				<div class="modal-header">
+					<p id="ask-modal-head-text"></p>
+				</div>
+				<div class="modal-body">
+					<p id="ask-modal-body-text"></p>
+				</div>
+				<div class="modal-footer">
+					<button id="yes-btn" class="modal-btn">Yes</button>
+					<button id="no-btn" class="modal-btn">No</button>
+				</div>
+			</div>
 		</div>
 
 		<script src="js/game.js"></script>

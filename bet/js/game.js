@@ -1,24 +1,21 @@
 
-	console.log(window.scrollX + document.querySelector('.window').getBoundingClientRect().left);
-	console.log(window.scrollX + document.querySelector('.track').getBoundingClientRect().right);
+	// console.log(window.scrollX + document.querySelector('.window').getBoundingClientRect().left);
+	// console.log(window.scrollX + document.querySelector('.track').getBoundingClientRect().right);
 	var mywindow = {};
-	// mywindow.left = window.scrollX + document.querySelector('.window').getBoundingClientRect().left;
-	// mywindow.right = window.scrollX + document.querySelector('.window').getBoundingClientRect().right;
-	// console.log(mywindow);
 	const myframe = document.getElementById('scroll');
 	mywindow.left = myframe.scrollLeft;
 	mywindow.right = myframe.scrollLeft + myframe.offsetWidth;
-	console.log(mywindow);
+	// console.log(mywindow);
 	const bushes = document.getElementsByClassName('bush');
-	console.log(bushes.length);
-	for (i=0; i<bushes.length; i++) {
-		console.log(window.scrollX + bushes[i].getBoundingClientRect().left);
-		console.log(bushes[i].offsetWidth);
-	}
+	// console.log(bushes.length);
+	// for (i=0; i<bushes.length; i++) {
+	// 	console.log(window.scrollX + bushes[i].getBoundingClientRect().left);
+	// 	console.log(bushes[i].offsetWidth);
+	// }
 	const horses = document.getElementsByClassName('horse');
-	for (i=0; i< horses.length; i++) {
-		console.log(window.scrollX + horses[i].getBoundingClientRect().left)
-	}
+	// for (i=0; i< horses.length; i++) {
+	// 	console.log(window.scrollX + horses[i].getBoundingClientRect().left)
+	// }
 
 // variables for game
 	var horse1 = document.getElementById('horse1');
@@ -37,9 +34,9 @@
 	// speed of respectives horses
 	var speed = [0,0,0,0];
 	// constant speed the horses will run no matter what
-	var const_speed=0.08;
+	var const_speed=0.145;
 	// maximum and minimum values for assinging random speed to horses
-	var max=0.017;
+	var max=0.02;
 	var min=0;
 
 	var max1 , max2 , max3 , max4 ;
@@ -47,11 +44,22 @@
 	var gameLooper;
 
 	const frameRight = document.querySelector('.window').getBoundingClientRect().right;
+	const backgroundScrollSpeed = 2;
 	var trackRight = document.querySelector('.track').getBoundingClientRect().right;
 	var initialTrackPosition = scroller.scrollLeft;
 	const distanceInterval = (trackRight - scroller.scrollLeft)/7;
 	assignNewSpeed();
 	var cash = 100;
+	const betBoard = document.getElementById('bet');
+	const genrModal = document.getElementById('generalModal');
+	const askModal = document.getElementById('askModal');
+	const modalHeadText = document.getElementById('modal-head-text');
+	const modalBodyText = document.getElementById('modal-body-text');
+	const modalFooterText = document.getElementById('modal-footer-text');
+	const askModalHeadText = document.getElementById('ask-modal-head-text');
+	const askModalBodyText = document.getElementById('ask-modal-body-text');
+	const yesBtn = document.getElementById('yes-btn');
+	const noBtn = document.getElementById('no-btn');
 	var betOption = document.getElementById('amount');
 	var betAmount = 0;
 	var betHorse = document.getElementById('bethorse');
@@ -65,9 +73,11 @@
 
 	// When the user clicks on the start button, start the game
 	startBtn.onclick = function() {
-	  gameStart();
-	  //disable the start button
-	  startBtn.disabled = true;
+		if(checkInputs() == true) {
+		  //disable the start button
+		  startBtn.disabled = true;
+			gameStart();
+		}
 	}
 
 function resetGame() {
@@ -100,7 +110,9 @@ function gameStart(){
 		resetGame();
 	} else {
 		gallopSound.loop = true;
+		crowdSound.currentTime = 0;
 		crowdSound.loop = true;
+		crowdSound.volume = 0.1;
 		gameTrackSoundChange(true);
 		// give the running effect when game starts by adding class runRight
 		horse1.classList.add('runRight');
@@ -192,7 +204,7 @@ function trackScroller() {
 	if(frameRight < trackRight)
 	{
 		// for scrolling the background
-		scroller.scrollLeft = scroller.scrollLeft + 1;
+		scroller.scrollLeft = scroller.scrollLeft + backgroundScrollSpeed;
 	}
 }
 
@@ -217,7 +229,9 @@ function displayCash() {
 function bet() {
 	betAmount = betOption.options[betOption.selectedIndex].value;
 	if(betAmount > cash) {
-		alert('You cannot bet more then you have');
+		addBorderAnim(betBoard);
+		addBorderAnim(betOption);
+		displayModal('Sorry', "But your bet is more then you have !! \<br\>Please lower the bet amount", "Thank You");
 		return false;
 	} else {
 		cash = cash - betAmount;
@@ -234,7 +248,7 @@ function inputDisable() {
 
 function inputEnable() {
 	betOption.disabled = false;
-	betHorse.disabled = false;	
+	betHorse.disabled = false;
 }
 
 function resultDisplay() {
@@ -275,24 +289,25 @@ function gameDirector() {
 }
 
 function gameContinue() {
-	var conf = confirm("Start Next Race ?");
-	if (conf == true) {
-		resetGame();
+	const goodMsg = "Wow Your Horse Won !!! \<br\> Start Next Race ?";
+	const badMsg = "Bad bet you still have chance. \<br\> Start Next Race ?";
+	var msg;
+	if (checkWinner()) {
+		msg = goodMsg;
 	}
 	else {
-		alert("Sayu Nara");
+		msg = badMsg;
 	}
+	confirmation("Hello There", msg, resetGame);
 }
 
 function playAgain() {
-	var conf = confirm("Play Again ?");
-	if (conf == true) {
-		cash = 100;
-		resetGame();
-	}
-	else {
-		alert("Sayu Nara");
-	}
+	confirmation("Hello There", "Want to Play Again", resetGameWithCash);
+}
+
+function resetGameWithCash() {
+	cash = 100;
+	resetGame();
 }
 
 function gameTrackSoundChange(onOf) {
@@ -302,6 +317,54 @@ function gameTrackSoundChange(onOf) {
 	} else {
 		gallopSound.pause();
 		crowdSound.pause();	
+	}
+}
+
+function checkInputs() {
+	amt = betOption.options[betOption.selectedIndex].value;
+	hrs = betHorse.options[betHorse.selectedIndex].value;
+	if(amt == '' || hrs == '') {
+		if(amt == '') {
+			addBorderAnim(betOption);
+		}
+		if(hrs == '') {
+			addBorderAnim(betHorse);
+		}
+		addBorderAnim(betBoard);
+		displayModal('Excuse Me','Please place your bet first before starting the race !!! \<br\> Bet board is on the lower left corner', 'Thank You');
+		return false;
+	}
+	removeBorderAnim(betOption);
+	removeBorderAnim(betHorse);
+	removeBorderAnim(betBoard);
+	return true;
+}
+
+function addBorderAnim(ele) {
+	ele.classList.add('borderanim');
+}
+
+function removeBorderAnim(ele) {
+	ele.classList.remove('borderanim');
+}
+
+function displayModal(header='',body='',footer='') {
+	modalHeadText.innerHTML = header;
+	modalBodyText.innerHTML = body;
+	modalFooterText.innerHTML = footer;
+	genrModal.style.display = "block";
+}
+
+function confirmation(header='Confirm The Action',message='Are You Sure ?',callback) {
+	askModalHeadText.innerHTML = header;
+	askModalBodyText.innerHTML = message;
+	askModal.style.display = "block";
+	yesBtn.onclick = function() {
+		callback();
+		askModal.style.display = "none";
+	}
+	noBtn.onclick = function() {
+		askModal.style.display = "none";
 	}
 }
 // document.addEventListener('DOMContentLoaded', horseRun);
