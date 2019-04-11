@@ -1,15 +1,47 @@
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
 	/*slider section style starts*/
 	.carousel-item > img {
 		height:400px;
 	}
 	/*slider secitn syele ends*/
+
+	/*fixed item style starts*/
+	#fixed-item {
+		height: 88px;
+	}
+	.fixed-item-inner {
+		width:100%;
+	}
+	.fixed-item-text {
+		display: none;
+	}
+	.mob-fixed-item-text {
+		text-align: center;
+		color:white;
+		font-weight: 600;
+		font-size:14px;
+		line-height: 1;
+		margin-bottom: 0;
+	}
+	.horse.standLeft {
+		float:none;
+	}
+	/*fixed item style ends*/
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 769px) {
 	/*navbar style starts*/
 	#nav-brnd {
 		display:none;
 	}
 	/*navbar style ends*/
+	/*fixed-item style starts*/
+	#fixed-item:hover .fixed-item-inner {
+		left:-120px;
+		background-color: rgba(0,0,0,0.9);
+	}
+	.mob-fixed-item-text {
+		display: none;
+	}
+	/*fixed-item style ends*/
 } 

@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet"> 
   </head>
   <body>
-    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark" id="cust-nav">
       <!-- Brand -->
       <a class="navbar-brand" id="nav-brnd" href="#">Surya Neupane</a>
 
@@ -26,10 +26,16 @@
       <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="#">Portfolio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Surya Neupane</a>
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Gallery</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" target="_blank" href="./bet/game.html">Play My Game</a>
@@ -37,6 +43,17 @@
         </ul>
       </div>
     </nav>
+
+    <div id="fixed-item">
+      <a href="./bet/game.html" target="_blank">
+        <div class="fixed-item-inner">
+          <div id="horse1" class="horse standLeft runLeft">
+          </div>
+          <p class="fixed-item-text">Play My Game</p>
+          <p class="mob-fixed-item-text">My Game</p>
+        </div>
+      </a>
+    </div>
 
     <section class="slider-sec">
       <div id="demo" class="carousel slide" data-ride="carousel">
