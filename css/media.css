@@ -27,6 +27,31 @@
 		float:none;
 	}
 	/*fixed item style ends*/
+
+	/*navbar style starts*/
+	#cust-nav {
+		background-color: rgba(0,0,0,0.5);
+	}
+
+	#cust-nav .navbar-toggler {
+	    color: rgba(255,255,255,1);
+	    border-color: rgba(255,255,255,.8);
+	    border-radius: 0;
+	}
+
+	#cust-nav .navbar-collapse {
+		background-color: rgba(0,0,0,0.5);
+	}
+
+	#cust-nav .navbar-brand {
+		margin-bottom: 17px;
+	}
+
+	#cust-nav .navbar-toggler {
+		margin-bottom: 10px;
+	}
+
+	/*navbar style ends*/
 }
 
 @media only screen and (min-width: 769px) {
