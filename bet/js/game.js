@@ -1,6 +1,7 @@
 
 	// console.log(window.scrollX + document.querySelector('.window').getBoundingClientRect().left);
 	// console.log(window.scrollX + document.querySelector('.track').getBoundingClientRect().right);
+	console.log(window.innerWidth);
 	var mywindow = {};
 	const myframe = document.getElementById('scroll');
 	mywindow.left = myframe.scrollLeft;
@@ -43,8 +44,8 @@
 
 	var gameLooper;
 
-	const frameRight = document.querySelector('.window').getBoundingClientRect().right;
-	const backgroundScrollSpeed = 2;
+	var frameRight = document.querySelector('.window').getBoundingClientRect().right;
+	var backgroundScrollSpeed = 2;
 	var trackRight = document.querySelector('.track').getBoundingClientRect().right;
 	var initialTrackPosition = scroller.scrollLeft;
 	const distanceInterval = (trackRight - scroller.scrollLeft)/7;
@@ -71,6 +72,15 @@
 	// variables for game
 	const startBtn = document.getElementById("start");
 
+	if(window.innerWidth <= 512) {
+		const_speed = 0.47;
+		max=0.07;
+	}
+	else if(window.innerWidth < 768 && window.innerWidth > 512) {
+		const_speed = 0.27;
+		max=0.04;
+	}
+	window.onresize = resize;
 	// When the user clicks on the start button, start the game
 	startBtn.onclick = function() {
 		if(checkInputs() == true) {
@@ -365,6 +375,24 @@ function confirmation(header='Confirm The Action',message='Are You Sure ?',callb
 	}
 	noBtn.onclick = function() {
 		askModal.style.display = "none";
+	}
+}
+
+function resize() {
+	if(window.innerWidth <= 512) {
+		frameRight = document.querySelector('.window').getBoundingClientRect().right;
+		const_speed = 0.47;
+		max=0.07;
+	}
+	else if(window.innerWidth < 768 && window.innerWidth > 512) {
+		frameRight = document.querySelector('.window').getBoundingClientRect().right;
+		const_speed = 0.27;
+		max=0.04;
+	}
+	else {
+		frameRight = document.querySelector('.window').getBoundingClientRect().right;
+		const_speed = 0.145;
+		max=0.02;	
 	}
 }
 // document.addEventListener('DOMContentLoaded', horseRun);

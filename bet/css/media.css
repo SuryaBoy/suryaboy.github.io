@@ -1,6 +1,93 @@
- @media screen and (max-width: 720px) {
+ @media screen and (max-width: 768px) {
 	.general-modal .modal-content {
 	  margin: auto;
 	  width: 90%;
+	}
+	.track {
+		margin-top:2vh;
+		height:40vh;
+		width:500vw;
+	}
+	#horse1 {
+		top:3vh;
+	}
+	#horse2 {
+		top:12vh;
+	}
+	#horse3 {
+		top:19vh;
+	}
+	#horse4 {
+		top:28vh;
+	}
+	#scroll {
+		height:50vh;
+	}
+	#start {
+		margin:0.6vw;
+		font-size:16px;
+		padding:7px 15px;
+	}
+	#instBtn {
+		height:34px;
+	}
+	#bet {
+		width:180px;
+	}
+	p {
+		font-size:16px;
+	}
+	label,select,input {
+		width:auto;
+	}
+	.jump1 {
+		left:80vw;
+	}
+	.jump2 {
+		left:140vw;
+	}
+	.jump3 {
+		left:190vw;
+	}
+	.jump4 {
+		left:250vw;
+	}
+	.jump5 {
+		left:310vw;
+	}
+	.jump6 {
+		left:360vw;
+	}
+	#finishline {
+		margin-left: 470vw;
+		width:5vw;
+	}
+}
+
+@media screen and (max-width: 512px) {
+	.track {
+		width:680vw;
+	}
+	.jump1 {
+		left:80vw;
+	}
+	.jump2 {
+		left:180vw;
+	}
+	.jump3 {
+		left:220vw;
+	}
+	.jump4 {
+		left:290vw;
+	}
+	.jump5 {
+		left:330vw;
+	}
+	.jump6 {
+		left:420vw;
+	}
+	#finishline {
+		margin-left: 570vw;
+		width:10vw;
 	}
 }
