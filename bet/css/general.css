@@ -153,3 +153,8 @@
     animation-direction: alternate-reverse;
     animation-timing-function: cubic-bezier(.75,-0.71,.08,.55);
 }
+
+#bet p {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
