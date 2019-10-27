@@ -12,6 +12,16 @@
 	margin-bottom: 20px;
 }
 
+.sec-overlay {
+	position:absolute;
+	height:100%;
+	width:100%;
+	z-index:2;
+	background-color: rgba(0,0,0,0.3);
+	top:0;
+	left:0;
+}
+
 /*general style ends*/
 
 /*navbar style starts*/
@@ -168,6 +178,7 @@
 
 .abt-sec {
 	background-color:#bdd8fb;
+	padding:0;
 }
 
 .abt-img {
@@ -179,6 +190,36 @@
 	margin-bottom: 20px;
 	border: 2px solid gray;
 	padding: 2px;
+}
+
+.sec-head-ctr {
+	padding:35px 0;
+	background-color: white;
+}
+.sec-head-ctr .sec-title {
+	font-weight:600;
+	margin-bottom: 0;
+}
+.inner-abt-sec {
+/*	background-image:  url(../img/abt-bac.jpg);*/
+	height:500px;
+	background: url(../img/dance.jpg) no-repeat fixed center;
+	background-size: cover;
+	position: relative;
+	padding:40px 0;
+	color:white;
+}
+.abt-text-ctr {
+	position:absolute;
+	width:40%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index:3;
+}
+.abt-text-ctr p {
+	margin:0;
+	text-align:center;
 }
 
 /*about me section ends*/
