@@ -223,3 +223,55 @@
 }
 
 /*about me section ends*/
+
+/*portfolio sec starts*/
+
+.inner-port-sec{
+	/*background-color: rgba(0,0,0,0.4);*/
+	padding:60px 0;
+}
+
+.port-img{
+	width:100%;
+	height:100%;
+	object-fit: cover;
+}
+
+.port-box{
+	width:100%;
+	height:300px;
+	border:solid gray 2px;
+	position:relative;
+}
+
+.portfolio-sec .sec-head-ctr {
+	background-color: #22203e;
+}
+.portfolio-sec .sec-head-ctr .sec-title{
+	color:white;
+}
+.port-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.4);
+  overflow: hidden;
+  width: 100%;
+  height:40%;
+  padding:5px;
+/*  height: 0;
+  transition: .5s ease;*/
+}
+.port-overlay h3 {
+	color:white;
+	font-size:16px;
+	font-weight: 600;
+	text-decoration: underline;
+}
+.port-overlay p {
+	color:white;
+	font-size: 13px;
+	font-weight: 500;
+}
+/*portfolio sec ends*/
