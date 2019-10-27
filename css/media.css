@@ -52,6 +52,15 @@
 	}
 
 	/*navbar style ends*/
+
+	/*about sec style starts*/
+	.abt-text-ctr {
+		width:90%;
+	}
+	.abt-text-ctr p {
+		font-size:15px;
+	}
+	/*about sec style ends*/
 }
 
 @media only screen and (min-width: 769px) {
