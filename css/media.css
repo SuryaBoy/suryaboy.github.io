@@ -61,6 +61,13 @@
 		font-size:15px;
 	}
 	/*about sec style ends*/
+
+	/*portfolio sec start*/
+	.port-box{
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+	/*portfolio sec ends*/
 }
 
 @media only screen and (min-width: 769px) {
