@@ -22,6 +22,17 @@
 	left:0;
 }
 
+.sec-blue-bac {
+	background-color: #22203e !important;
+}
+
+.sec-blue-bac .sec-title {
+	color:white;
+}
+
+.inner-sec {
+	padding: 60px 0;
+}
 /*general style ends*/
 
 /*navbar style starts*/
@@ -194,7 +205,6 @@
 
 .sec-head-ctr {
 	padding:35px 0;
-	background-color: white;
 }
 .sec-head-ctr .sec-title {
 	font-weight:600;
@@ -227,8 +237,7 @@
 /*portfolio sec starts*/
 
 .inner-port-sec{
-	/*background-color: rgba(0,0,0,0.4);*/
-	padding:60px 0;
+
 }
 
 .port-img{
@@ -244,12 +253,6 @@
 	position:relative;
 }
 
-.portfolio-sec .sec-head-ctr {
-	background-color: #22203e;
-}
-.portfolio-sec .sec-head-ctr .sec-title{
-	color:white;
-}
 .port-overlay {
   position: absolute;
   left: 0;
@@ -275,3 +278,26 @@
 	font-weight: 500;
 }
 /*portfolio sec ends*/
+
+/*contact sec starts*/
+.cont-list {
+	list-style-type: none;
+	padding:0;
+}
+.cont-list li i {
+	margin-right: 5px;
+	color:#22203e;
+}
+.social-cont {
+	margin-bottom: 0;
+	padding:0;
+	list-style-type: none;
+}
+.social-cont li {
+	display:inline-block;
+}
+.social-cont li i {
+	font-size:24px;
+	margin:0 5px;
+}
+/*contact sec ends*/
