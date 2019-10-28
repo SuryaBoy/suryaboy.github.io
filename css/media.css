@@ -68,6 +68,12 @@
 		margin-bottom: 10px;
 	}
 	/*portfolio sec ends*/
+
+	/*contact sec starts*/
+	.cont-list li {
+		font-size:14px;
+	}
+	/*contact sec ends*/
 }
 
 @media only screen and (min-width: 769px) {
