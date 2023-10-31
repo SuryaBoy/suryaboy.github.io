@@ -78,6 +78,26 @@
 	display: block;
 }
 
+#cust-nav .navbar-nav .nav-with-drop .dropdown-menu {
+	margin-top: 0;
+	background-color:rgba(0,0,0,0.5);
+	color:white;
+	padding:0;
+}
+
+#cust-nav .navbar-nav .nav-with-drop .dropdown-menu .dropdown-item {
+	color:white;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+#cust-nav .navbar-nav .nav-with-drop .dropdown-menu .dropdown-divider{
+	margin:0;
+}
+
+#cust-nav .navbar-nav .nav-with-drop .dropdown-menu .dropdown-item:hover {
+	background-color:rgba(0,0,0,0.8);
+}
 /*navbar style ends*/
 
 /*fixed item style starts*/

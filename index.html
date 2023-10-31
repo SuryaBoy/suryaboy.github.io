@@ -41,15 +41,20 @@
           <li class="nav-item">
             <a class="nav-link" href="#cont-id">Contact</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" target="_blank" href="./bet/game.html">Play My Game</a>
+          <li class="nav-item nav-with-drop dropdown">
+            <a class="nav-link dropdown-toggle"  href="#"  data-toggle="dropdown">Play My Games</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" target="_blank" href="./bet/game.html">Bet</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" target="_blank" href="./wreckingBalls/index.html">Wrecking Balls</a>
+            </div>
           </li>
         </ul>
       </div>
     </nav>
 
     <div id="fixed-item">
-      <a href="https://www.infinity.infinityfreeapp.com/bet/game.html" target="_blank">
+      <a href="./bet/game.html" target="_blank">
         <div class="fixed-item-inner">
           <div id="horse1" class="horse standLeft runLeft">
           </div>
@@ -226,4 +231,16 @@
     </section>
 
   </body>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $(".nav-with-drop").hover(function(){
+        $(this).addClass("show");
+        $(this).children(".dropdown-menu").addClass("show")
+        }, function(){
+        $(this).removeClass("show");
+        $(this).children(".dropdown-menu").removeClass("show")
+      });
+    });
+
+  </script>
 </html>

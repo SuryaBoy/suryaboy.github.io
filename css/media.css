@@ -51,6 +51,12 @@
 		margin-bottom: 10px;
 	}
 
+	#cust-nav .navbar-nav .nav-with-drop .dropdown-menu .dropdown-item {
+		color:white;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+
 	/*navbar style ends*/
 
 	/*about sec style starts*/
