@@ -7,11 +7,28 @@
 
 	/*fixed item style starts*/
 	#fixed-item {
-		height: 88px;
+		height: 60px;
+		width:60px;
 	}
 	.fixed-item-inner {
 		width:100%;
+		position: relative;
 	}
+	#fixed-item-left {
+		height:60px;
+		width:60px;
+	}
+	#fixed-item-left .fixed-item-inner {
+		left:0px;
+		width:100%;
+		position: relative;
+	}
+	#fixed-item-left img {
+		float:none;
+		scale:0.5;
+		position: absolute;
+		top:-5px;
+	}	
 	.fixed-item-text {
 		display: none;
 	}
@@ -19,12 +36,20 @@
 		text-align: center;
 		color:white;
 		font-weight: 600;
-		font-size:14px;
+		font-size:11px;
 		line-height: 1;
 		margin-bottom: 0;
+		position: absolute;
+		bottom:2px;
+		left:10px;
 	}
 	.horse.standLeft {
 		float:none;
+	}
+	.horse {
+		scale:0.5;
+		position: absolute;
+		left:-16px;
 	}
 	/*fixed item style ends*/
 
@@ -96,6 +121,12 @@
 		left:-120px;
 		background-color: rgba(0,0,0,0.9);
 	}
+
+	#fixed-item-left:hover .fixed-item-inner {
+		left:0;
+		background-color: rgba(0,0,0,0.9);
+	}
+
 	.mob-fixed-item-text {
 		display: none;
 	}

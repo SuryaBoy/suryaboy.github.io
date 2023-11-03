@@ -58,8 +58,18 @@
         <div class="fixed-item-inner">
           <div id="horse1" class="horse standLeft runLeft">
           </div>
-          <p class="fixed-item-text">Play My Game</p>
-          <p class="mob-fixed-item-text">My Game</p>
+          <p class="fixed-item-text">Play BetGame</p>
+          <p class="mob-fixed-item-text">BetGame</p>
+        </div>
+      </a>
+    </div>
+
+    <div id="fixed-item-left">
+      <a href="./wreckingBalls/index.html" target="_blank">
+        <div class="fixed-item-inner">
+          <p class="fixed-item-text">WreckingBalls</p>
+          <img src="./img/wBalls.png">
+          <p class="mob-fixed-item-text">WrecBalls</p>
         </div>
       </a>
     </div>
@@ -232,15 +242,22 @@
 
   </body>
   <script type="text/javascript">
-    $(document).ready(function(){
-      $(".nav-with-drop").hover(function(){
-        $(this).addClass("show");
-        $(this).children(".dropdown-menu").addClass("show")
-        }, function(){
-        $(this).removeClass("show");
-        $(this).children(".dropdown-menu").removeClass("show")
+      $(document).ready(function(){
+        $(".nav-with-drop").hover(function(){
+          $(this).addClass("show");
+          $(this).children(".dropdown-menu").addClass("show")
+          $(this).children(".dropdown-menu").attr("aria-expanded",'true')
+          }, function(){
+          $(this).removeClass("show");
+          $(this).children(".dropdown-menu").removeClass("show")
+          $(this).children(".dropdown-menu").attr("aria-expanded",'false')
+        });
+        $(".nav-with-drop").click(function(){
+          $(this).addClass("show");
+          $(this).children(".dropdown-menu").addClass("show")
+          $(this).children(".dropdown-menu").attr("aria-expanded",'true')
+        });
       });
-    });
 
   </script>
 </html>

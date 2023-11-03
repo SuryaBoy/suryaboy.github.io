@@ -113,6 +113,17 @@
 	z-index: 9;
 }
 
+#fixed-item-left {
+	position: fixed;
+	top: 50%;
+	height: 60px;
+	width: 100px;
+	transform: translate(0,-50%);
+	background-color: transparent;
+	z-index: 9;
+	left: 0;
+}
+
 .fixed-item-inner {
 	height:100%;
 	width:220px;
@@ -121,6 +132,10 @@
 	left:0;
 	transition: left 0.6s cubic-bezier(.25,.1,.3,.8), background-color 0.6s;
 	background-color: rgba(0,0,0,0.5);
+}
+
+#fixed-item-left .fixed-item-inner {
+	left:-150px;
 }
 
 .fixed-item-text {
@@ -132,6 +147,27 @@
 	font-size:15px;
 	margin-left: 10px;
 	line-height: 4.1;
+}
+
+#fixed-item-left .fixed-item-text {
+	margin-left: 40px;
+}
+
+#fixed-item-left img {
+	height:60px;
+	width:auto;
+	float: right;
+	transform: rotateZ(0deg);
+	animation: imgAnim 2s linear infinite;
+}
+
+@keyframes imgAnim {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
 }
 
 .horse {background-image: url(../bet/images/horse1.png);}
